@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>DCANP GROUP · Vende sin stock (Mobile Pro)</title>
+    <title>DCANP GROUP · Élite Dropshipping</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: Inter (mejor para móvil) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Playfair Display para títulos + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,13 +19,14 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0c121c;
-            color: #eef3fc;
+            background: #0b121f;
+            color: #f0f4fa;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            position: relative;
         }
 
-        /* Fondo con partículas (suave) */
+        /* Fondo cinemático con partículas */
         body::before {
             content: '';
             position: fixed;
@@ -31,7 +34,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 30%, #1a2f44, #0b131f);
+            background: radial-gradient(ellipse at 40% 50%, #1a2f44, #0a1424 90%);
             z-index: -2;
         }
 
@@ -42,25 +45,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.1"><circle cx="20" cy="20" r="3" fill="%23b28937"/><circle cx="180" cy="60" r="4" fill="%23b28937"/><circle cx="120" cy="160" r="5" fill="%23b28937"/><circle cx="60" cy="140" r="2" fill="%23ffffff"/></svg>');
-            background-size: 250px 250px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.15"><circle cx="20" cy="30" r="5" fill="%23b28937"/><circle cx="180" cy="70" r="7" fill="%23b28937"/><circle cx="130" cy="170" r="6" fill="%23b28937"/><circle cx="50" cy="150" r="4" fill="%23d4af37"/><circle cx="90" cy="30" r="3" fill="%23ffffff"/></svg>');
+            background-size: 300px 300px;
             z-index: -1;
         }
 
         .container {
             width: 100%;
-            padding: 0 16px;
+            max-width: 600px; /* para que en móvil no se estire demasiado */
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Header compacto móvil */
+        /* Header ultra premium pero compacto */
         .main-header {
-            padding: 12px 0;
+            padding: 16px 0;
             position: sticky;
             top: 0;
-            background: rgba(9, 18, 30, 0.85);
+            background: rgba(10, 20, 30, 0.8);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(242, 193, 110, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             z-index: 100;
         }
 
@@ -68,22 +72,20 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 10px;
         }
 
         .logo {
-            height: 44px;
-            width: auto;
-            filter: drop-shadow(0 0 8px #b2893760);
+            height: 48px;
+            filter: drop-shadow(0 0 15px #b2893780);
         }
 
         .header-actions {
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .btn-outline-mob {
-            border: 1.5px solid rgba(242, 193, 110, 0.7);
+        .btn-outline-premium {
+            border: 1.5px solid rgba(212, 175, 55, 0.7);
             background: transparent;
             color: #f2c16e;
             font-weight: 600;
@@ -91,152 +93,168 @@
             border-radius: 40px;
             font-size: 0.8rem;
             text-decoration: none;
-            white-space: nowrap;
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.3px;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
 
-        .btn-solid-mob {
-            background: linear-gradient(145deg, #f2c16e, #d9a43b);
+        .btn-solid-premium {
+            background: linear-gradient(145deg, #d4af37, #b28937);
             color: #0a1424;
             font-weight: 700;
             padding: 8px 16px;
             border-radius: 40px;
             font-size: 0.8rem;
             text-decoration: none;
-            white-space: nowrap;
+            box-shadow: 0 6px 18px -4px #b28937;
+            border: 1px solid rgba(255, 245, 200, 0.5);
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 6px 12px -4px #b28937;
-            border: 1px solid rgba(255,255,240,0.3);
         }
 
-        /* Hero para móvil */
-        .hero-mob {
+        /* Hero cinematográfico móvil */
+        .hero {
             padding: 30px 0 20px;
         }
 
-        .hero-title-mob {
-            font-size: 2.4rem;
-            font-weight: 800;
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
             line-height: 1.1;
-            background: linear-gradient(to right, #ffffff, #f2e1c6, #f2c16e);
+            background: linear-gradient(to right, #ffffff, #f5e6c6, #f2c16e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
+            text-shadow: 0 5px 20px #b2893740;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
         }
 
-        .hero-sub-mob {
+        .hero-sub {
             font-size: 1rem;
-            color: #b5cee8;
-            border-left: 3px solid #f2c16e;
-            padding-left: 16px;
-            margin: 16px 0 24px;
+            color: #b8d1ec;
+            border-left: 3px solid #d4af37;
+            padding-left: 18px;
+            margin: 15px 0 25px;
+            font-weight: 300;
+            line-height: 1.6;
         }
 
-        .cta-row-mob {
+        .cta-row {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin: 30px 0 25px;
+        }
+
+        .btn-comunidad {
+            background: #25D366;
+            color: white;
+            padding: 18px 20px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            box-shadow: 0 20px 30px -8px #1b6e3b;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-registro {
+            background: rgba(10, 25, 40, 0.6);
+            backdrop-filter: blur(12px);
+            border: 2px solid #d4af37;
+            color: #f2c16e;
+            padding: 18px 20px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-registro:hover {
+            background: #d4af3730;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
             margin: 25px 0 20px;
         }
 
-        .btn-comunidad-mob {
-            background: #25D366;
-            color: white;
-            padding: 16px 20px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            text-decoration: none;
-            box-shadow: 0 15px 25px -8px #1b6e3b;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .btn-registro-mob {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid #f2c16e;
-            color: #f2c16e;
-            padding: 16px 20px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .stats-mob {
-            display: flex;
-            justify-content: space-around;
-            margin: 25px 0 15px;
-        }
-
-        .stat-item-mob {
+        .stat-item {
             text-align: center;
         }
 
-        .stat-number-mob {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #f2c16e;
-            display: block;
-        }
-
-        .stat-label-mob {
-            font-size: 0.8rem;
-            color: #b0c9e0;
-        }
-
-        .hero-img-mob {
-            width: 100%;
-            border-radius: 30px;
-            border: 2px solid rgba(242, 193, 110, 0.4);
-            box-shadow: 0 25px 35px -15px #000;
-            margin: 15px 0;
-        }
-
-        /* Sección plataforma (pasos) */
-        .section-title-mob {
+        .stat-number {
             font-size: 2rem;
-            font-weight: 700;
+            font-weight: 800;
+            color: #d4af37;
+            display: block;
+            text-shadow: 0 0 15px #b28937;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #a5c0da;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 40px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 30px 50px -20px #000, 0 0 0 2px rgba(212, 175, 55, 0.2);
+            margin: 20px 0 10px;
+        }
+
+        /* Sección plataforma con estilo de lujo */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 800;
             text-align: center;
-            background: linear-gradient(to bottom, #ffffff, #f2c16e);
+            background: linear-gradient(to bottom, #ffffff, #d4af37);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 40px 0 10px;
+            margin: 50px 0 15px;
         }
 
-        .section-sub-mob {
+        .section-sub {
             text-align: center;
             font-size: 0.95rem;
-            color: #b0c6db;
+            color: #b0c9e5;
             margin-bottom: 30px;
-            padding: 0 10px;
+            font-weight: 300;
         }
 
-        .steps-grid-mob {
+        .steps-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin: 20px 0;
+            gap: 25px;
+            margin: 30px 0;
         }
 
-        .step-card-mob {
-            background: rgba(20, 35, 50, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(242, 193, 110, 0.25);
-            border-radius: 40px;
-            padding: 22px 18px;
+        .step-card {
+            background: rgba(18, 30, 45, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
+            padding: 24px 22px;
+            box-shadow: 0 30px 40px -30px #000;
         }
 
         .step-header {
@@ -247,199 +265,199 @@
         }
 
         .step-num {
-            background: rgba(242, 193, 110, 0.2);
-            color: #f2c16e;
-            width: 48px;
-            height: 48px;
-            border-radius: 30px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            width: 54px;
+            height: 54px;
+            border-radius: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.8rem;
-            border: 1px solid #f2c16e;
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
         }
 
         .step-header h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #f2e1c6;
+            font-family: 'Playfair Display', serif;
         }
 
-        .step-img-mob {
+        .step-img {
             width: 100%;
-            border-radius: 28px;
-            margin: 15px 0 10px;
-            border: 2px solid rgba(242, 193, 110, 0.4);
-            background: #0f1d2b;
+            border-radius: 35px;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            margin: 15px 0 12px;
+            background: #0f1e2c;
         }
 
-        .chip-mob {
-            background: rgba(242, 193, 110, 0.12);
-            border: 1px solid rgba(242, 193, 110, 0.4);
+        .chip {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid #d4af37;
             border-radius: 60px;
-            padding: 6px 16px;
+            padding: 8px 20px;
             font-size: 0.8rem;
             display: inline-block;
             color: #f2c16e;
         }
 
-        /* Servicios cards */
-        .services-grid-mob {
+        /* Servicios en grid elegante */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
-            margin: 30px 0;
+            margin: 40px 0;
         }
 
-        .service-card-mob {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(242, 193, 110, 0.2);
-            border-radius: 28px;
-            padding: 20px 12px;
+        .service-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 35px;
+            padding: 20px 8px;
             text-align: center;
+            backdrop-filter: blur(8px);
         }
 
-        .service-card-mob i {
+        .service-item i {
             font-size: 2rem;
-            color: #f2c16e;
+            color: #d4af37;
             margin-bottom: 10px;
         }
 
-        .service-card-mob h4 {
-            font-size: 1rem;
+        .service-item h4 {
+            font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* PRODUCTOS GRID (CORREGIDO PARA MÓVIL) */
-        .product-grid-mob {
+        /* PRODUCTOS - Verticales, con imagen grande y pro */
+        .product-grid {
             display: grid;
-            grid-template-columns: 1fr; /* 1 columna en móvil */
-            gap: 20px;
-            margin: 25px 0 40px;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin: 30px 0 50px;
         }
 
-        .product-card-mob {
-            background: rgba(15, 28, 42, 0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(242, 193, 110, 0.3);
-            border-radius: 40px;
+        .product-card {
+            background: rgba(16, 28, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 50px;
             overflow: hidden;
-            display: flex;
-            flex-direction: row; /* horizontal para mejor visual */
-            align-items: center;
-            padding: 12px;
+            transition: 0.3s;
+            box-shadow: 0 25px 35px -20px #000;
         }
 
-        .product-img-mob {
-            width: 120px;
-            height: 120px;
+        .product-img {
+            height: 260px;
             background: #102433;
-            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
-            flex-shrink: 0;
-            border: 1px solid rgba(242, 193, 110, 0.3);
+            padding: 25px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
         }
 
-        .product-img-mob img {
+        .product-img img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            filter: drop-shadow(0 10px 15px #00000080);
         }
 
-        .product-info-mob {
-            padding: 0 0 0 16px;
-            flex: 1;
+        .product-info {
+            padding: 22px 22px 28px;
         }
 
-        .product-info-mob .sku-mob {
-            font-size: 0.7rem;
-            background: rgba(242, 193, 110, 0.15);
-            padding: 4px 10px;
-            border-radius: 40px;
-            display: inline-block;
+        .product-sku {
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid #d4af37;
             color: #f2c16e;
+            padding: 5px 15px;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            display: inline-block;
+            letter-spacing: 0.5px;
         }
 
-        .product-info-mob .name-mob {
-            font-size: 1.2rem;
+        .product-name {
+            font-size: 1.5rem;
             font-weight: 700;
-            margin: 8px 0 4px;
+            margin: 15px 0 8px;
+            color: #ffffff;
             line-height: 1.3;
         }
 
-        .product-info-mob .price-mob {
-            font-size: 1.6rem;
+        .product-price {
+            font-size: 2.2rem;
             font-weight: 800;
-            color: #f2c16e;
-        }
-
-        /* Footer móvil */
-        .footer-mob {
-            background: #050e18;
-            border-top: 2px solid rgba(242, 193, 110, 0.3);
-            padding: 40px 0 20px;
-            margin-top: 40px;
-            border-radius: 40px 40px 0 0;
-        }
-
-        .footer-flex-mob {
+            color: #d4af37;
             display: flex;
-            flex-direction: column;
-            gap: 25px;
+            align-items: baseline;
+            gap: 6px;
         }
 
-        .footer-logo-mob {
-            height: 50px;
+        .price-small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #9bb7d6;
+        }
+
+        /* Footer lujoso */
+        .footer {
+            background: #050e18;
+            border-top: 2px solid rgba(212, 175, 55, 0.4);
+            padding: 50px 0 30px;
+            margin-top: 50px;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .footer-logo {
+            height: 55px;
             filter: brightness(0) invert(1);
+            margin-bottom: 20px;
+        }
+
+        .btn-footer {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
 
         .btn-footer-wa {
             background: #25D366;
             color: white;
-            padding: 14px 20px;
-            border-radius: 60px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-weight: 600;
-            margin-right: 10px;
         }
 
         .btn-footer-reg {
-            background: #f2c16e;
+            background: #d4af37;
             color: #0a1424;
-            padding: 14px 20px;
-            border-radius: 60px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
             font-weight: 700;
         }
 
-        .float-mob {
+        /* Botones flotantes siempre visibles */
+        .float-buttons {
             position: fixed;
             bottom: 20px;
-            right: 16px;
-            left: 16px;
+            left: 20px;
+            right: 20px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             z-index: 9999;
             pointer-events: none;
         }
 
-        .float-mob a {
+        .float-buttons a {
             pointer-events: auto;
             flex: 1;
             text-align: center;
-            padding: 14px 0;
+            padding: 16px 0;
             border-radius: 60px;
             font-weight: 700;
             font-size: 1rem;
@@ -448,226 +466,200 @@
             border: 2px solid white;
         }
 
-        .float-wa-mob {
+        .float-wa {
             background: #25D366;
             color: white;
-            box-shadow: 0 12px 25px -5px #1b6e3b;
+            box-shadow: 0 10px 25px #1b6e3b;
         }
 
-        .float-reg-mob {
-            background: #f2c16e;
+        .float-reg {
+            background: #d4af37;
             color: #0a1424;
-            box-shadow: 0 12px 25px -5px #8f6930;
+            box-shadow: 0 10px 25px #8f6930;
         }
 
-        /* ocultar en desktop innecesario */
-        @media (min-width: 600px) {
-            .product-grid-mob {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .product-card-mob {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .product-img-mob {
-                width: 100%;
-                height: 180px;
-            }
+        @media (min-width: 480px) {
+            .container { max-width: 550px; }
+            .hero-title { font-size: 3.2rem; }
         }
+
     </style>
 </head>
 <body>
 
-    <!-- Header móvil -->
+    <!-- Header -->
     <header class="main-header">
         <div class="container header-flex">
             <img class="logo" src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/logo_DCANP_GROUP.png?v=1772076241" alt="DCANP">
             <div class="header-actions">
-                <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="btn-outline-mob"><i class="fab fa-whatsapp"></i> WA</a>
-                <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="btn-solid-mob"><i class="fas fa-user-plus"></i> Registro</a>
+                <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="btn-outline-premium"><i class="fab fa-whatsapp"></i> WA</a>
+                <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="btn-solid-premium"><i class="fas fa-crown"></i> Registro</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero mobile -->
-    <div class="container hero-mob">
-        <h1 class="hero-title-mob">Vende sin stock, nosotros lo hacemos por ti</h1>
-        <p class="hero-sub-mob">Únete a +700 vendedores. Plataforma profesional, comisiones diarias y soporte real.</p>
-        <div class="cta-row-mob">
-            <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="btn-comunidad-mob"><i class="fab fa-whatsapp"></i> Comunidad WhatsApp</a>
-            <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="btn-registro-mob"><i class="fas fa-rocket"></i> Registrate ya</a>
+    <!-- Hero -->
+    <div class="container hero">
+        <h1 class="hero-title">Vende sin stock, nosotros lo hacemos por ti</h1>
+        <p class="hero-sub">Únete a la comunidad élite de dropshipping. Productos de alta demanda, comisiones diarias y plataforma transparente.</p>
+        <div class="cta-row">
+            <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="btn-comunidad"><i class="fab fa-whatsapp"></i> Comunidad WhatsApp</a>
+            <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="btn-registro"><i class="fas fa-rocket"></i> Registrate ya</a>
         </div>
-        <div class="stats-mob">
-            <div class="stat-item-mob"><span class="stat-number-mob">+150</span><span class="stat-label-mob">productos</span></div>
-            <div class="stat-item-mob"><span class="stat-number-mob">24h</span><span class="stat-label-mob">comisiones</span></div>
-            <div class="stat-item-mob"><span class="stat-number-mob">+700</span><span class="stat-label-mob">vendedores</span></div>
+        <div class="stats">
+            <div class="stat-item"><span class="stat-number">+150</span><span class="stat-label">Productos</span></div>
+            <div class="stat-item"><span class="stat-number">24h</span><span class="stat-label">Comisiones</span></div>
+            <div class="stat-item"><span class="stat-number">+700</span><span class="stat-label">Vendedores</span></div>
         </div>
-        <img class="hero-img-mob" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="dropshipping">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="dropshipping pro">
     </div>
 
-    <!-- Plataforma paso a paso (mobile) -->
+    <!-- Plataforma tour -->
     <div class="container">
-        <h2 class="section-title-mob">Así opera la plataforma</h2>
-        <p class="section-sub-mob">Cada pantalla diseñada para que vendas sin fricción.</p>
-        <div class="steps-grid-mob">
+        <h2 class="section-title">Así opera la plataforma</h2>
+        <p class="section-sub">Diseñada para que vendas sin fricción, con total transparencia.</p>
+        <div class="steps-grid">
 
-            <div class="step-card-mob">
+            <div class="step-card">
                 <div class="step-header"><span class="step-num">1</span><h3>Acceso seguro</h3></div>
-                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/inicio.jpg?v=1772078952" class="step-img-mob" onerror="this.style.display='none'">
-                <span class="chip-mob"><i class="fas fa-lock"></i> Login rápido</span>
+                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/inicio.jpg?v=1772078952" class="step-img" onerror="this.style.display='none'">
+                <span class="chip"><i class="fas fa-lock"></i> Login biométrico</span>
             </div>
 
-            <div class="step-card-mob">
+            <div class="step-card">
                 <div class="step-header"><span class="step-num">2</span><h3>Dashboard</h3></div>
-                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010732.jpg?v=1772078953" class="step-img-mob" onerror="this.style.display='none'">
-                <span class="chip-mob"><i class="fas fa-chart-line"></i> Métricas real-time</span>
+                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010732.jpg?v=1772078953" class="step-img" onerror="this.style.display='none'">
+                <span class="chip"><i class="fas fa-chart-line"></i> Métricas en vivo</span>
             </div>
 
-            <div class="step-card-mob">
+            <div class="step-card">
                 <div class="step-header"><span class="step-num">3</span><h3>Catálogo</h3></div>
-                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010905.jpg?v=1772078964" class="step-img-mob" onerror="this.style.display='none'">
-                <span class="chip-mob"><i class="fas fa-boxes"></i> +100 productos</span>
+                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010905.jpg?v=1772078964" class="step-img" onerror="this.style.display='none'">
+                <span class="chip"><i class="fas fa-boxes"></i> +100 productos</span>
             </div>
 
-            <div class="step-card-mob">
+            <div class="step-card">
                 <div class="step-header"><span class="step-num">4</span><h3>Cargar pedido</h3></div>
-                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010754.jpg?v=1772078953" class="step-img-mob" onerror="this.style.display='none'">
-                <span class="chip-mob"><i class="fas fa-bolt"></i> Un clic</span>
+                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010754.jpg?v=1772078953" class="step-img" onerror="this.style.display='none'">
+                <span class="chip"><i class="fas fa-bolt"></i> Un clic</span>
             </div>
 
-            <div class="step-card-mob">
+            <div class="step-card">
                 <div class="step-header"><span class="step-num">5</span><h3>Mis comisiones</h3></div>
-                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010812.jpg?v=1772078953" class="step-img-mob" onerror="this.style.display='none'">
-                <span class="chip-mob"><i class="fas fa-coins"></i> Transparencia total</span>
+                <img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-26_010812.jpg?v=1772078953" class="step-img" onerror="this.style.display='none'">
+                <span class="chip"><i class="fas fa-coins"></i> Transparencia total</span>
             </div>
 
-            <div class="step-card-mob">
+            <div class="step-card">
                 <div class="step-header"><span class="step-num">6</span><h3>Wallet + más</h3></div>
-                <div style="background:rgba(242,193,110,0.1); border-radius:30px; padding:20px; margin:10px 0;">
-                    <i class="fas fa-wallet" style="font-size:2rem; color:#f2c16e;"></i>
-                    <p style="margin-top:8px;">Gestión de delivery, perfil e historial</p>
+                <div style="background:rgba(212,175,55,0.1); border-radius:40px; padding:20px; margin:10px 0;">
+                    <i class="fas fa-wallet" style="font-size:2.2rem; color:#d4af37;"></i>
+                    <p style="margin-top:12px;">Delivery, perfil, historial integrado</p>
                 </div>
-                <span class="chip-mob"><i class="fas fa-globe"></i> Ecosistema completo</span>
+                <span class="chip"><i class="fas fa-globe"></i> Ecosistema completo</span>
             </div>
         </div>
     </div>
 
-    <!-- Servicios mini -->
+    <!-- Servicios rápidos -->
     <div class="container">
-        <div class="services-grid-mob">
-            <div class="service-card-mob"><i class="fas fa-search"></i><h4>Consultas</h4></div>
-            <div class="service-card-mob"><i class="fas fa-file-invoice"></i><h4>Encomiendas</h4></div>
-            <div class="service-card-mob"><i class="fas fa-shield-alt"></i><h4>Garantía 24h</h4></div>
-            <div class="service-card-mob"><i class="fas fa-camera"></i><h4>Fotos reales</h4></div>
-            <div class="service-card-mob"><i class="fas fa-university"></i><h4>Transferencias</h4></div>
-            <div class="service-card-mob"><i class="fas fa-coins"></i><h4>Comisiones</h4></div>
+        <div class="services-grid">
+            <div class="service-item"><i class="fas fa-search"></i><h4>Consultas</h4></div>
+            <div class="service-item"><i class="fas fa-file-invoice"></i><h4>Encomiendas</h4></div>
+            <div class="service-item"><i class="fas fa-shield-alt"></i><h4>Garantía 24h</h4></div>
+            <div class="service-item"><i class="fas fa-camera"></i><h4>Fotos reales</h4></div>
+            <div class="service-item"><i class="fas fa-university"></i><h4>Transferencias</h4></div>
+            <div class="service-item"><i class="fas fa-coins"></i><h4>Comisiones</h4></div>
         </div>
     </div>
 
-    <!-- PRODUCTOS (CORREGIDO PARA MÓVIL) - Todos los productos excepto plantilla ortopédica -->
+    <!-- PRODUCTOS - Versión vertical premium (imagen grande, texto grande) -->
     <div class="container">
-        <h2 class="section-title-mob" style="font-size: 2rem;">🔥 Productos que convierten</h2>
-        <div class="product-grid-mob">
+        <h2 class="section-title">🔥 Productos seleccionados</h2>
+        <p class="section-sub">Los más vendidos por nuestra comunidad</p>
+        <div class="product-grid">
             <!-- Mini aspiradora -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/ChatGPT_Image_9_ago_2025_09_49_46_p.m._ee0d4101-4eb8-45cf-9b23-e5e1d8c6288c.png?v=1755580613"></div><div class="product-info-mob"><span class="sku-mob">#MINIASPI</span><div class="name-mob">Mini aspiradora</div><div class="price-mob">69.000 Gs</div></div></div>
-            <!-- Plumero -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2025-10-30_005208.jpg?v=1762320213"></div><div class="product-info-mob"><span class="sku-mob">#PLUMERO</span><div class="name-mob">Plumero extensible</div><div class="price-mob">50.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/ChatGPT_Image_9_ago_2025_09_49_46_p.m._ee0d4101-4eb8-45cf-9b23-e5e1d8c6288c.png?v=1755580613"></div>
+                <div class="product-info"><span class="product-sku">#MINIASPI</span><div class="product-name">Mini aspiradora 2 en 1</div><div class="product-price">69.000 <span class="price-small">Gs</span></div></div>
+            </div>
+            <!-- Plumero extensible -->
+            <div class="product-card">
+                <div class="product-img"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2025-10-30_005208.jpg?v=1762320213"></div>
+                <div class="product-info"><span class="product-sku">#PLUMERO</span><div class="product-name">Plumero extensible 2.8m</div><div class="product-price">50.000 <span class="price-small">Gs</span></div></div>
+            </div>
             <!-- Huevera gallinita -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://i5.walmartimages.com/asr/38287ab5-5cf3-4aa2-a7ff-e7d3e60a240d.ed14180e8b1a0f73bc88f4cf03082575.png"></div><div class="product-info-mob"><span class="sku-mob">#HUEVEGA</span><div class="name-mob">Huevera gallinita</div><div class="price-mob">69.000 Gs</div></div></div>
-            <!-- Soporte antivibración x4 -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://http2.mlstatic.com/D_923417-MLA87858875006_072025-C.jpg"></div><div class="product-info-mob"><span class="sku-mob">#SOPORTEX4</span><div class="name-mob">Soporte antivibración</div><div class="price-mob">35.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://i5.walmartimages.com/asr/38287ab5-5cf3-4aa2-a7ff-e7d3e60a240d.ed14180e8b1a0f73bc88f4cf03082575.png"></div>
+                <div class="product-info"><span class="product-sku">#HUEVEGA</span><div class="product-name">Huevera eléctrica gallinita</div><div class="product-price">69.000 <span class="price-small">Gs</span></div></div>
+            </div>
+            <!-- Soporte antivibración -->
+            <div class="product-card">
+                <div class="product-img"><img src="https://http2.mlstatic.com/D_923417-MLA87858875006_072025-C.jpg"></div>
+                <div class="product-info"><span class="product-sku">#SOPORTEX4</span><div class="product-name">Soporte antivibración x4</div><div class="product-price">35.000 <span class="price-small">Gs</span></div></div>
+            </div>
             <!-- Pack medias terapéuticas -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://jv7dta-ka.myshopify.com/cdn/shop/files/ChatGPTImage19ago2025_01_50_42a.m..png?v=1755579070&width=600"></div><div class="product-info-mob"><span class="sku-mob">#PACKBIEN</span><div class="name-mob">Pack medias terapéuticas</div><div class="price-mob">45.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://jv7dta-ka.myshopify.com/cdn/shop/files/ChatGPTImage19ago2025_01_50_42a.m..png?v=1755579070&width=600"></div>
+                <div class="product-info"><span class="product-sku">#PACKBIEN</span><div class="product-name">Pack medias terapéuticas</div><div class="product-price">45.000 <span class="price-small">Gs</span></div></div>
+            </div>
             <!-- Afilador -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://jv7dta-ka.myshopify.com/cdn/shop/files/afilador1.webp?v=1753405987&width=600"></div><div class="product-info-mob"><span class="sku-mob">#AFILADOR</span><div class="name-mob">Afilador cuchillos</div><div class="price-mob">35.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://jv7dta-ka.myshopify.com/cdn/shop/files/afilador1.webp?v=1753405987&width=600"></div>
+                <div class="product-info"><span class="product-sku">#AFILADOR</span><div class="product-name">Afilador cuchillos y tijeras</div><div class="product-price">35.000 <span class="price-small">Gs</span></div></div>
+            </div>
             <!-- Crema para hongo -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/WhatsApp_Image_2025-06-30_at_02.07.48.jpg?v=1758810936"></div><div class="product-info-mob"><span class="sku-mob">#CREMAHONGO</span><div class="name-mob">Crema para hongo</div><div class="price-mob">55.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/WhatsApp_Image_2025-06-30_at_02.07.48.jpg?v=1758810936"></div>
+                <div class="product-info"><span class="product-sku">#CREMAHONGO</span><div class="product-name">Crema para hongo</div><div class="product-price">55.000 <span class="price-small">Gs</span></div></div>
+            </div>
             <!-- Encendedor eléctrico -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://oechsle.vteximg.com.br/arquivos/ids/21575089-1000-1000/imageUrl_1.jpg?v=638872943568970000"></div><div class="product-info-mob"><span class="sku-mob">#ENCUSB</span><div class="name-mob">Encendedor USB</div><div class="price-mob">40.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://oechsle.vteximg.com.br/arquivos/ids/21575089-1000-1000/imageUrl_1.jpg?v=638872943568970000"></div>
+                <div class="product-info"><span class="product-sku">#ENCUSB</span><div class="product-name">Encendedor USB recargable</div><div class="product-price">40.000 <span class="price-small">Gs</span></div></div>
+            </div>
             <!-- Pizarra mágica -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Capturadepantalla2025-12-03014757_45217c0a-ad15-4a8b-87bb-3e8927915024.jpg?v=1764737323"></div><div class="product-info-mob"><span class="sku-mob">#PIZARRA</span><div class="name-mob">Pizarra mágica</div><div class="price-mob">99.000 Gs</div></div></div>
-            <!-- Soporte regulable electrodomésticos -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2025-08-31_013252.png?v=1756670358"></div><div class="product-info-mob"><span class="sku-mob">#SOPREG</span><div class="name-mob">Soporte regulable</div><div class="price-mob">75.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Capturadepantalla2025-12-03014757_45217c0a-ad15-4a8b-87bb-3e8927915024.jpg?v=1764737323"></div>
+                <div class="product-info"><span class="product-sku">#PIZARRA</span><div class="product-name">Pizarra mágica</div><div class="product-price">99.000 <span class="price-small">Gs</span></div></div>
+            </div>
+            <!-- Soporte regulable -->
+            <div class="product-card">
+                <div class="product-img"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2025-08-31_013252.png?v=1756670358"></div>
+                <div class="product-info"><span class="product-sku">#SOPREG</span><div class="product-name">Soporte regulable electrodomésticos</div><div class="product-price">75.000 <span class="price-small">Gs</span></div></div>
+            </div>
             <!-- RoyalBee Wax -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://jv7dta-ka.myshopify.com/cdn/shop/files/ChatGPT_Image_4_oct_2025_03_57_23_p.m..png?v=1759604271&width=600"></div><div class="product-info-mob"><span class="sku-mob">#ROYALBEE</span><div class="name-mob">RoyalBee Wax</div><div class="price-mob">65.000 Gs</div></div></div>
-            <!-- Linterna potente zoom -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://acdn-us.mitiendanube.com/stores/001/131/056/products/linterr1-883f44649ed5698ece16878282190084-640-0.jpg"></div><div class="product-info-mob"><span class="sku-mob">#LINTERNA</span><div class="name-mob">Linterna zoom</div><div class="price-mob">85.000 Gs</div></div></div>
-            <!-- Corrector de postura -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://www.skylinestoree.online/cdn/shop/files/fajacorrectora3_540x_d6e03ef1-f416-4751-aba8-e8d3bd49dd95.jpg?v=1752811848&width=600"></div><div class="product-info-mob"><span class="sku-mob">#CORRECTOR</span><div class="name-mob">Corrector postura</div><div class="price-mob">90.000 Gs</div></div></div>
-            <!-- Jet Pro Soplador -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV8S3FjFvKNos16XPw434bgus3zrY92CUuSw&s"></div><div class="product-info-mob"><span class="sku-mob">#SOPLADOR</span><div class="name-mob">Mini soplador</div><div class="price-mob">130.000 Gs</div></div></div>
-            <!-- Mini compresor -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2026-01-15_110421.jpg?v=1768485910"></div><div class="product-info-mob"><span class="sku-mob">#COMPRESOR</span><div class="name-mob">Mini compresor</div><div class="price-mob">130.000 Gs</div></div></div>
-            <!-- Foco camara -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2026-01-15_111223.jpg?v=1768486364"></div><div class="product-info-mob"><span class="sku-mob">#FOCOCAM</span><div class="name-mob">Foco cámara</div><div class="price-mob">79.000 Gs</div></div></div>
-            <!-- Espejo led -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://gofix.com.ar/wp-content/uploads/2023/10/LEDMirrorCarSunvisorVanityAccessoriesLightMakeupWomen_3_541816c3-1d36-49e7-91c3-93b35498de97_900x.webp"></div><div class="product-info-mob"><span class="sku-mob">#ESPEJOLED</span><div class="name-mob">Espejo LED</div><div class="price-mob">65.000 Gs</div></div></div>
-            <!-- Linterna con picana -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWmC6pF_KQ9lGwvPYhfkOON8vACP06bpJ8A&s"></div><div class="product-info-mob"><span class="sku-mob">#PICANA</span><div class="name-mob">Linterna picana</div><div class="price-mob">79.000 Gs</div></div></div>
-            <!-- Soporte impermeable -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://m.media-amazon.com/images/I/819eHrOGc2L._AC_SL1500_.jpg"></div><div class="product-info-mob"><span class="sku-mob">#SOPIMP</span><div class="name-mob">Soporte impermeable</div><div class="price-mob">48.000 Gs</div></div></div>
-            <!-- Auricular M10 -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5X6iw6RU3fblN7hl9Admzu1ZqikbhavQKzA&s"></div><div class="product-info-mob"><span class="sku-mob">#M10</span><div class="name-mob">Auricular M10</div><div class="price-mob">55.000 Gs</div></div></div>
-            <!-- Mini masajeador -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/MINI_MASAJEADOR.jpg?v=1768485911"></div><div class="product-info-mob"><span class="sku-mob">#MASAJE</span><div class="name-mob">Mini masajeador</div><div class="price-mob">35.000 Gs</div></div></div>
-            <!-- Barra led emergencia -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_924939-MLB80296648992_112024-F-luminaria-led-barra-de-luz-emergncia-52cm-recarregavel-usb.webp"></div><div class="product-info-mob"><span class="sku-mob">#BARRALED</span><div class="name-mob">Barra LED emergencia</div><div class="price-mob">75.000 Gs</div></div></div>
-            <!-- Rodillera compresión -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/image_20240426182600-5c972456166d0e084f17141684868750-480-0.jpg?v=1762487809"></div><div class="product-info-mob"><span class="sku-mob">#RODILLERA</span><div class="name-mob">Rodillera compresión</div><div class="price-mob">55.000 Gs</div></div></div>
-            <!-- Tobillera compresión -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/tobillera.jpg?v=1762705987"></div><div class="product-info-mob"><span class="sku-mob">#TOBILLERA</span><div class="name-mob">Tobillera compresión</div><div class="price-mob">55.000 Gs</div></div></div>
-            <!-- Plantilla deportiva azul negro -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://ae01.alicdn.com/kf/S30f5331381aa4b038d89a4acf33c03e6J.jpg"></div><div class="product-info-mob"><span class="sku-mob">#PLANTDEP</span><div class="name-mob">Plantilla deportiva</div><div class="price-mob">57.000 Gs</div></div></div>
-            <!-- Pistola masajeadora -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://http2.mlstatic.com/D_NQ_NP_863788-MLA78270636317_082024-O.webp"></div><div class="product-info-mob"><span class="sku-mob">#PISTOLA</span><div class="name-mob">Pistola masajeadora</div><div class="price-mob">90.000 Gs</div></div></div>
-            <!-- Mini cámara spy -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2025-07-21_013411.png?v=1757887583"></div><div class="product-info-mob"><span class="sku-mob">#CAMPY</span><div class="name-mob">Mini cámara spy</div><div class="price-mob">69.000 Gs</div></div></div>
-            <!-- Mini GPS -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://m.media-amazon.com/images/I/61LRXMihjEL._AC_SL1500_.jpg"></div><div class="product-info-mob"><span class="sku-mob">#GPS</span><div class="name-mob">Mini GPS Geo Ultra</div><div class="price-mob">79.000 Gs</div></div></div>
-            <!-- Cintas mágicas -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_629276-MPE69789861652_062023-F-super-pack-2-cintas-magicas-de-3-metros-doble-contacto.webp"></div><div class="product-info-mob"><span class="sku-mob">#CINTAS</span><div class="name-mob">Cintas mágicas</div><div class="price-mob">28.000 Gs</div></div></div>
-            <!-- Rejilla autoadhesiva -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://acdn-us.mitiendanube.com/stores/001/836/042/products/img_8890-4857d05e74bd140d9517473250670310-1024-1024.webp"></div><div class="product-info-mob"><span class="sku-mob">#REJILLA</span><div class="name-mob">Rejilla adhesiva pack</div><div class="price-mob">45.000 Gs</div></div></div>
-            <!-- Clip nasal -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://www.demodirecta.com/udecontrol_datos/galerias/grandes/355.jpg"></div><div class="product-info-mob"><span class="sku-mob">#CLIPNASAL</span><div class="name-mob">Clip anti-ronquidos</div><div class="price-mob">40.000 Gs</div></div></div>
-            <!-- Drone Pro HD -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/Captura_de_pantalla_2026-02-04_112827.jpg?v=1770215346"></div><div class="product-info-mob"><span class="sku-mob">#DRONE</span><div class="name-mob">Drone Pro HD</div><div class="price-mob">195.000 Gs</div></div></div>
-            <!-- Alumbrado solar -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/WhatsApp_Image_2026-01-30_at_7.53.56_PM.jpg?v=1769813758"></div><div class="product-info-mob"><span class="sku-mob">#SOLAR90W</span><div class="name-mob">Alumbrado solar</div><div class="price-mob">79.000 Gs</div></div></div>
-            <!-- V-SHAPED cinta facial -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://gran7.com.py/PRO/todas_las_img2/1614_25_9.jpg"></div><div class="product-info-mob"><span class="sku-mob">#VSHAPED</span><div class="name-mob">Cinta facial V-Shaped</div><div class="price-mob">60.000 Gs</div></div></div>
-            <!-- Hidrolavadora portátil -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://m.media-amazon.com/images/I/71blwxAYH-L.jpg"></div><div class="product-info-mob"><span class="sku-mob">#HIDRO</span><div class="name-mob">Hidrolavadora portátil</div><div class="price-mob">205.000 Gs</div></div></div>
-            <!-- Crema Bee Venom -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://d39ru7awumhhs2.cloudfront.net/paraguay/products/12614/1763038799BEE%20VENOM.png"></div><div class="product-info-mob"><span class="sku-mob">#BEEVENOM</span><div class="name-mob">Crema Bee Venom</div><div class="price-mob">74.000 Gs</div></div></div>
-            <!-- Kit 3 perfumes -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Imagen_de_WhatsApp_2025-11-03_a_las_22.05.52_557dacb2.jpg?v=1762218465"></div><div class="product-info-mob"><span class="sku-mob">#KITPERF</span><div class="name-mob">Kit 3 perfumes</div><div class="price-mob">220.000 Gs</div></div></div>
-            <!-- Combo perfumes -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/WhatsApp_Image_2025-05-12_at_19.24.47.jpg?v=1758052245"></div><div class="product-info-mob"><span class="sku-mob">#COMBOPERF</span><div class="name-mob">Combo One Million/212</div><div class="price-mob">220.000 Gs</div></div></div>
-            <!-- Irrigador bucal -->
-            <div class="product-card-mob"><div class="product-img-mob"><img src="https://cdn.shopify.com/s/files/1/0707/1979/9484/files/Captura_de_pantalla_2025-10-13_100619.jpg?v=1760360812"></div><div class="product-info-mob"><span class="sku-mob">#IRRIGADOR</span><div class="name-mob">Irrigador bucal</div><div class="price-mob">105.000 Gs</div></div></div>
+            <div class="product-card">
+                <div class="product-img"><img src="https://jv7dta-ka.myshopify.com/cdn/shop/files/ChatGPT_Image_4_oct_2025_03_57_23_p.m..png?v=1759604271&width=600"></div>
+                <div class="product-info"><span class="product-sku">#ROYALBEE</span><div class="product-name">RoyalBee Wax cera para madera</div><div class="product-price">65.000 <span class="price-small">Gs</span></div></div>
+            </div>
+            <!-- Linterna potente -->
+            <div class="product-card">
+                <div class="product-img"><img src="https://acdn-us.mitiendanube.com/stores/001/131/056/products/linterr1-883f44649ed5698ece16878282190084-640-0.jpg"></div>
+                <div class="product-info"><span class="product-sku">#LINTERNA</span><div class="product-name">Linterna potente con zoom</div><div class="product-price">85.000 <span class="price-small">Gs</span></div></div>
+            </div>
         </div>
+        <p style="text-align:center; margin:20px 0 40px; color:#b0c9e5;">➕ Y muchos más en el catálogo completo</p>
     </div>
 
-    <!-- Footer mobile -->
-    <footer class="footer-mob">
-        <div class="container footer-flex-mob">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <img class="footer-logo" src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/logo_DCANP_GROUP.png?v=1772076241" alt="DCANP">
+            <p style="margin-bottom:25px; color:#b5c9e5;">El socio que todo vendedor necesita. Comisiones diarias, productos de alto valor.</p>
             <div>
-                <img class="footer-logo-mob" src="https://cdn.shopify.com/s/files/1/0885/3012/5095/files/logo_DCANP_GROUP.png?v=1772076241" alt="DCANP">
-                <p style="margin: 15px 0; color:#b5c9e0;">Proveedor oficial dropshipping · Comisiones diarias</p>
+                <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="btn-footer btn-footer-wa"><i class="fab fa-whatsapp"></i> Comunidad</a>
+                <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="btn-footer btn-footer-reg"><i class="fas fa-user-plus"></i> Registro</a>
             </div>
-            <div>
-                <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="btn-footer-wa"><i class="fab fa-whatsapp"></i> Comunidad</a>
-                <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="btn-footer-reg"><i class="fas fa-user-plus"></i> Registro</a>
-            </div>
-            <p style="text-align: center; color:#6b8db0; margin-top:20px;">© 2026 DCANP GROUP · Vende sin stock</p>
+            <p style="text-align:center; margin-top:40px; color:#6a8bb0;">© 2026 DCANP GROUP · La forma más profesional de vender sin stock</p>
         </div>
     </footer>
 
-    <!-- Botones flotantes móviles (siempre visibles) -->
-    <div class="float-mob">
-        <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="float-wa-mob"><i class="fab fa-whatsapp"></i> Comunidad</a>
-        <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="float-reg-mob"><i class="fas fa-user-plus"></i> Registro</a>
+    <!-- Botones flotantes -->
+    <div class="float-buttons">
+        <a href="https://chat.whatsapp.com/Dr2OW6RZRvYIMKbWv81HWs?mode=gi_t" target="_blank" class="float-wa"><i class="fab fa-whatsapp"></i> Comunidad</a>
+        <a href="https://script.google.com/macros/s/AKfycbxQtjKTJyyENwYYgVZH2Q8vKSfzsdQg524dWYDkUbA-yH9nsNOMlTSjD06nyZQBAtKg/exec" target="_blank" class="float-reg"><i class="fas fa-user-plus"></i> Registro</a>
     </div>
+
 </body>
 </html>
